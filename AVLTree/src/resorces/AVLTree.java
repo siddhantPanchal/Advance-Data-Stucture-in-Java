@@ -3,6 +3,7 @@ package resorces;
 public class AVLTree extends BinaryTree {
 
 	protected Node lastNode;
+	private static int count;
 	
 	public AVLTree() {
 		super();
