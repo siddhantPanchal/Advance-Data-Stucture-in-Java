@@ -42,8 +42,11 @@ public class DriverCode {
 				break;
 				
 			case 3:
-				System.out.println("Root : " + avl.getRoot().getData());
-				System.out.println("Tree is balenced : " + avl.isBalenced());
+				try {
+					System.out.println("Search Count is : " + avl.search(Integer.parseInt(br.readLine())));
+				} catch (NumberFormatException | IOException e) {
+					System.out.println("Try Again ");
+				}
 				break;
 			case 10:
 				System.exit(0);
