@@ -115,14 +115,33 @@ public class AVLTree extends BinaryTree {
 		insert(temp);
 	}
 	
+	public int search(int no) {
+		count = 0;
+		int searchCount = search(no,getRoot());
+		return searchCount;
+	}
+	
+	
+	private int search(int no,Node temp) {
+		if(temp == null)
+			return count;
+		else {
+			if(no == temp.getData()) {
+				System.out.println("Data is found ");
+				return count;
+			}
+			else {
+				if(no > temp.getData()) {
+					search(no, temp.getRightChild());
+				}
+				else if(no < temp.getData()) {
+					search(no, temp.getLeftChild());
+				}
+				count = count + 1;
+			}
+		}
+		return count;
+	}
+	
 	
 }
-
-
-/*
- * 
- * 				5
- * 		3				7
- * 					6
- * 
- * */
